@@ -32,13 +32,13 @@ function App() {
   useEffect(() => {
     const hasVisited = sessionStorage.getItem('hasVisited');
     if (hasVisited) {
-      setShowLanding(true);
+      setShowLanding(false); // Show landing page only on first visit
     } else {
-      sessionStorage.setItem('hasVisited', 'false');
+      sessionStorage.setItem('hasVisited', 'true');
     }
   }, []);
   
-  // Apply theme class to body whenever darkMode changes
+  // Apply theme class to document whenever darkMode changes
   useEffect(() => {
     // Apply theme class to the root HTML element
     if (darkMode) {
@@ -63,7 +63,7 @@ function App() {
 
   return (
     <Router>
-      <div className={`app ${darkMode ? 'dark-theme' : 'light-theme'}`}>
+      <div className="app">
         <header className="header">
           <div className="container header-content">
             <Link to="/" className="logo">
