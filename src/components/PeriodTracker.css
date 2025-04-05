@@ -1,0 +1,339 @@
+/* PeriodTrackerCalendar.css */
+
+.period-tracker-calendar {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  /* Tab Navigation */
+  .tab-navigation {
+    display: flex;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  
+  .tab-button {
+    flex: 1;
+    background-color: transparent;
+    border: none;
+    padding: 16px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #6b7280;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .tab-button.active {
+    color: #8a2387;
+    box-shadow: inset 0 -2px 0 #8a2387;
+  }
+  
+  .tab-button:hover:not(.active) {
+    background-color: #f9fafb;
+  }
+  
+  /* Header Styles */
+  .calendar-header {
+    background: linear-gradient(to right, #8a2387, #e94057, #f27121);
+    color: white;
+    padding: 24px;
+  }
+  
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .month-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+  }
+  
+  .nav-button {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .nav-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  
+  /* Calendar Body Styles */
+  .calendar-body {
+    padding: 24px;
+  }
+  
+  .calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .weekday-header {
+    padding-bottom: 16px;
+    color: #6b7280;
+    font-weight: 500;
+    font-size: 0.875rem;
+    text-align: center;
+  }
+  
+  .calendar-cell {
+    padding: 2px;
+  }
+  
+  .calendar-day {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 48px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    position: relative;
+    font-size: 0.9rem;
+  }
+  
+  .calendar-day:hover {
+    background-color: #f3f4f6;
+  }
+  
+  .period-day {
+    background: linear-gradient(to bottom, #f87171, #ef4444);
+    color: white;
+    box-shadow: 0 2px 4px rgba(239, 68, 68, 0.2);
+  }
+  
+  .period-day:hover {
+    background: linear-gradient(to bottom, #ef4444, #dc2626);
+  }
+  
+  .selected-day {
+    box-shadow: 0 0 0 2px white, 0 0 0 4px #3b82f6;
+    z-index: 10;
+  }
+  
+  .today {
+    font-weight: 700;
+  }
+  
+  .today span::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    width: 4px;
+    height: 4px;
+    background-color: #3b82f6;
+    border-radius: 50%;
+  }
+  
+  .empty-cell {
+    background-color: #f9fafb;
+  }
+  
+  /* Legend Styles */
+  .calendar-legend {
+    margin-top: 24px;
+    display: flex;
+    gap: 24px;
+  }
+  
+  .legend-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .legend-indicator {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+  
+  .period-indicator {
+    background: linear-gradient(to bottom, #f87171, #ef4444);
+    box-shadow: 0 1px 2px rgba(239, 68, 68, 0.2);
+  }
+  
+  .selected-indicator {
+    box-shadow: 0 0 0 2px white, 0 0 0 4px #3b82f6;
+  }
+  
+  .legend-text {
+    font-size: 0.875rem;
+    color: #4b5563;
+  }
+  
+  /* Predictions Section */
+  .predictions-section {
+    margin-top: 24px;
+    border-top: 1px solid #f3f4f6;
+    padding-top: 16px;
+  }
+  
+  .section-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
+  
+  /* History View Styles */
+  .history-view {
+    padding: 24px;
+  }
+  
+  .history-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-top: 0;
+    margin-bottom: 24px;
+  }
+  
+  .empty-history {
+    text-align: center;
+    color: #6b7280;
+    padding: 24px 0;
+  }
+  
+  .history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .history-month {
+    border-bottom: 1px solid #f3f4f6;
+    padding-bottom: 16px;
+  }
+  
+  .month-year-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 12px;
+  }
+  
+  .history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9fafb;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 8px;
+  }
+  
+  .history-dates {
+    flex: 1;
+  }
+  
+  .history-date-label {
+    font-size: 0.875rem;
+    color: #4b5563;
+    margin: 0 0 4px 0;
+  }
+  
+  .history-date-value {
+    font-weight: 500;
+    color: #1f2937;
+  }
+  
+  .remove-button {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(239, 68, 68, 0.1);
+    border: none;
+    color: #ef4444;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .remove-button:hover {
+    background-color: rgba(239, 68, 68, 0.2);
+  }
+  
+  /* Info Card Styles */
+  .info-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .info-card {
+    background-color: #f9fafb;
+    border-radius: 8px;
+    padding: 12px;
+    flex: 1;
+    min-width: 120px;
+    margin-bottom: 8px;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  
+  .info-label {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    color: #6b7280;
+    margin: 0 0 4px 0;
+  }
+  
+  .info-value {
+    font-weight: 500;
+    color: #1f2937;
+    margin: 0;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 480px) {
+    .period-tracker-calendar {
+      max-width: 100%;
+      border-radius: 0;
+    }
+    
+    .info-cards {
+      flex-direction: column;
+    }
+    
+    .calendar-day {
+      height: 40px;
+    }
+  }
